@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:insta_clone/src/components/image_data.dart';
 import 'package:insta_clone/src/controller/bottom_nav_controller.dart';
+import 'package:insta_clone/src/pages/home.dart';
 
 class App extends GetView<BottomNavController> {
   const App({Key? key}) : super(key: key);
@@ -15,6 +16,7 @@ class App extends GetView<BottomNavController> {
             body: IndexedStack(
               index: controller.pageIndex.value,
               children: [
+                const Hoem(),
                 Container(child: Text('Home')),
                 Container(child: Text('search')),
                 Container(child: Text('upload')),

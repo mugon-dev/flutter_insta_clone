@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:insta_clone/src/components/image_data.dart';
 import 'package:insta_clone/src/controller/bottom_nav_controller.dart';
 import 'package:insta_clone/src/pages/home.dart';
+import 'package:insta_clone/src/pages/search.dart';
 
 class App extends GetView<BottomNavController> {
   const App({Key? key}) : super(key: key);
@@ -12,13 +13,11 @@ class App extends GetView<BottomNavController> {
     return WillPopScope(
         child: Obx(
           () => Scaffold(
-            appBar: AppBar(),
             body: IndexedStack(
               index: controller.pageIndex.value,
               children: [
                 const Hoem(),
-                Container(child: Text('Home')),
-                Container(child: Text('search')),
+                const Search(),
                 Container(child: Text('upload')),
                 Container(child: Text('activity')),
                 Container(child: Text('mypage')),

@@ -4,6 +4,7 @@ import 'package:insta_clone/src/components/image_data.dart';
 import 'package:insta_clone/src/controller/bottom_nav_controller.dart';
 import 'package:insta_clone/src/pages/active_history.dart';
 import 'package:insta_clone/src/pages/home.dart';
+import 'package:insta_clone/src/pages/mypage.dart';
 import 'package:insta_clone/src/pages/search.dart';
 
 class App extends GetView<BottomNavController> {
@@ -27,7 +28,7 @@ class App extends GetView<BottomNavController> {
                 ),
                 Container(),
                 const ActiveHistory(),
-                Container(child: Text('mypage')),
+                const MyPage(),
               ],
             ),
             bottomNavigationBar: BottomNavigationBar(

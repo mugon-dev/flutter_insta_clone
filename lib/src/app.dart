@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:insta_clone/src/components/image_data.dart';
 import 'package:insta_clone/src/controller/bottom_nav_controller.dart';
+import 'package:insta_clone/src/pages/active_history.dart';
 import 'package:insta_clone/src/pages/home.dart';
 import 'package:insta_clone/src/pages/search.dart';
 
@@ -24,8 +25,8 @@ class App extends GetView<BottomNavController> {
                     builder: (context) => const Search(),
                   ),
                 ),
-                Container(child: Text('upload')),
-                Container(child: Text('activity')),
+                Container(),
+                const ActiveHistory(),
                 Container(child: Text('mypage')),
               ],
             ),

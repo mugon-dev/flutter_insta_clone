@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:insta_clone/src/pages/search/search_focus.dart';
 import 'package:quiver/iterables.dart';
 
 class Search extends StatefulWidget {
@@ -33,21 +34,32 @@ class _SearchState extends State<Search> {
     return Row(
       children: [
         Expanded(
-          child: Container(
-            padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
-            margin: const EdgeInsets.only(left: 15),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(6),
-              color: const Color(0xffefefef),
-            ),
-            child: Row(
-              children: const [
-                Icon(Icons.search),
-                Text(
-                  '검색',
-                  style: TextStyle(fontSize: 15, color: Color(0xff838383)),
-                )
-              ],
+          child: GestureDetector(
+            onTap: () {
+              // Get.to(SearchFocus());
+              // 중첩라우팅
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SearchFocus(),
+                  ));
+            },
+            child: Container(
+              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
+              margin: const EdgeInsets.only(left: 15),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(6),
+                color: const Color(0xffefefef),
+              ),
+              child: Row(
+                children: const [
+                  Icon(Icons.search),
+                  Text(
+                    '검색',
+                    style: TextStyle(fontSize: 15, color: Color(0xff838383)),
+                  )
+                ],
+              ),
             ),
           ),
         ),

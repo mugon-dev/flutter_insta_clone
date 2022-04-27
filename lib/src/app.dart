@@ -17,7 +17,13 @@ class App extends GetView<BottomNavController> {
               index: controller.pageIndex.value,
               children: [
                 const Hoem(),
-                const Search(),
+                // 중첩라우팅
+                Navigator(
+                  key: controller.searchPageNavigationKey,
+                  onGenerateRoute: (settings) => MaterialPageRoute(
+                    builder: (context) => const Search(),
+                  ),
+                ),
                 Container(child: Text('upload')),
                 Container(child: Text('activity')),
                 Container(child: Text('mypage')),
@@ -31,13 +37,24 @@ class App extends GetView<BottomNavController> {
               currentIndex: controller.pageIndex.value,
               onTap: controller.changeBottomNav,
               items: [
-                BottomNavigationBarItem(icon: ImageData(IconsPath.homeOff), activeIcon: ImageData(IconsPath.homeOn), label: 'home'),
-                BottomNavigationBarItem(icon: ImageData(IconsPath.searchOff), activeIcon: ImageData(IconsPath.searchOn), label: 'home'),
-                BottomNavigationBarItem(icon: ImageData(IconsPath.uploadIcon), label: 'home'),
-                BottomNavigationBarItem(icon: ImageData(IconsPath.activeOff), activeIcon: ImageData(IconsPath.activeOn), label: 'home'),
+                BottomNavigationBarItem(
+                    icon: ImageData(IconsPath.homeOff),
+                    activeIcon: ImageData(IconsPath.homeOn),
+                    label: 'home'),
+                BottomNavigationBarItem(
+                    icon: ImageData(IconsPath.searchOff),
+                    activeIcon: ImageData(IconsPath.searchOn),
+                    label: 'home'),
+                BottomNavigationBarItem(
+                    icon: ImageData(IconsPath.uploadIcon), label: 'home'),
+                BottomNavigationBarItem(
+                    icon: ImageData(IconsPath.activeOff),
+                    activeIcon: ImageData(IconsPath.activeOn),
+                    label: 'home'),
                 BottomNavigationBarItem(
                     icon: Container(
-                      decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.grey),
+                      decoration: const BoxDecoration(
+                          shape: BoxShape.circle, color: Colors.grey),
                       width: 30,
                       height: 30,
                     ),

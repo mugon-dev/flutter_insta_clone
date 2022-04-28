@@ -55,7 +55,7 @@ class MyPage extends GetView<MyPageController> {
             const SizedBox(height: 15),
             Text(
               controller.targetUser.value.description!,
-              style: TextStyle(fontSize: 13, color: Colors.black),
+              style: const TextStyle(fontSize: 13, color: Colors.black),
             )
           ],
         ),

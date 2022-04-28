@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:insta_clone/src/components/message_popup.dart';
+import 'package:insta_clone/src/controller/upload_controller.dart';
 import 'package:insta_clone/src/pages/upload.dart';
 
 enum PageName { HOME, SEARCH, UPLOAD, ACTIVITY, MYPAGE }
@@ -18,7 +19,9 @@ class BottomNavController extends GetxController {
     var page = PageName.values[value];
     switch (page) {
       case PageName.UPLOAD:
-        Get.to(() => const Upload());
+        Get.to(() => const Upload(), binding: BindingsBuilder(() {
+          Get.put(UploadController(), permanent: true);
+        }));
         break;
       case PageName.HOME:
       case PageName.SEARCH:
